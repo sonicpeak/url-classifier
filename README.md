@@ -61,12 +61,21 @@ Random Forest confusion matrix:
   from different sources, which could bias the model.
 - Hyperparameters were not tuned, and the decision threshold is the default 0.5.
 
+
 ## How to run
 
 ```bash
 git clone https://github.com/sonicpeak/url-classifier.git
 cd url-classifier
 pip install -r requirements.txt
+```
+
+1. Download the dataset from Kaggle and put `phishing_site_urls.csv` in a `data/` folder.
+2. **Notebook:** open `notebooks/phishing.ipynb` and run the cells in order.
+3. **Scripts** (run from the project root):
+```bash
+python src/train.py     # trains 4 models, saves best_model.joblib
+python src/analyze.py   # confusion matrix, feature importance, missed URLs
 ```
 
 1. Download the dataset from Kaggle and put `phishing_site_urls.csv` in a `data/` folder.
